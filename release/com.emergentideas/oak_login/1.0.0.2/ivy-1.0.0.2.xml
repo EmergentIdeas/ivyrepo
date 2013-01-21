@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="oak_login" revision="1.0.0.2" status="integration" publication="20121220174606"/>
+    <info organisation="com.emergentideas" module="oak_login" revision="1.0.0.2" status="integration" publication="20130121170518"/>
     <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
