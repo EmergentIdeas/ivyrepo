@@ -1,6 +1,6 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="oak_login" revision="1.0.0.3" status="integration" publication="20130121234914"/>
-    <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
+    <info organisation="com.emergentideas" module="oak_login" revision="1.0.0.3" status="integration" publication="20130122030608"/>
+    <configurations defaultconfmapping="build->*;deployment->*;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
     	<conf name="test"/>
@@ -10,7 +10,7 @@
     </publications>
     <dependencies>
     	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.4" conf="build"/>	
-		<dependency org="com.emergentideas" name="crud_tools" rev="[1.0,)" conf="deployment->default"/>
+		<dependency org="com.emergentideas" name="crud_tools" rev="[1.0,)" conf="deployment"/>
     	
     	<!-- For testing code -->
 		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
