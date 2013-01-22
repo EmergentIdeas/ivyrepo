@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="crud_tools" revision="1.0.0.1" status="integration" publication="20130121171227"/>
+    <info organisation="com.emergentideas" module="crud_tools" revision="1.0.0.1" status="integration" publication="20130122013004"/>
     <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>

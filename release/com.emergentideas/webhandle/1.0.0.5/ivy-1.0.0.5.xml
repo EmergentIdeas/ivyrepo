@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.5" status="integration" publication="20121220170624"/>
+    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.5" status="integration" publication="20130122020001"/>
     <configurations defaultconf="build" defaultconfmapping="build->default;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
@@ -28,9 +28,6 @@
 		
 		<!-- reads the names of method arguments -->
 		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.5.1" conf="deployment"/>
-		
-		<!-- sends email -->
-		<dependency org="org.apache.commons" name="commons-email" rev="1.2" conf="deployment"/>
 		
 		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.2.1" conf="deployment"/>
 		
