@@ -1,0 +1,14 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="oak_stdtemplates" revision="1.0.0.0" status="integration" publication="20130226172610"/>
+    <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="test"/>
+    </configurations>
+    <publications>
+    	<artifact name="oak_stdtemplates" type="jar" conf="appdep"/>
+    </publications>
+    <dependencies>
+    </dependencies>
+</ivy-module>
