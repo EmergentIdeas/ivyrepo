@@ -1,0 +1,64 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.6" status="integration" publication="20130313003229"/>
+    <configurations defaultconf="build" defaultconfmapping="build->default;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="sources"/>
+    	<conf name="deployment"/>
+    	<conf name="test"/>
+    </configurations>
+    
+    <publications>
+    	<artifact name="webhandle" type="jar" ext="jar"/>
+    	<artifact name="webhandle-sources" type="source" ext="jar" conf="sources"/>
+    </publications>
+    <dependencies>
+    
+    	<!-- Needed for the j2ee anotations and interfaces -->
+    	<dependency org="tomcat" name="servlet-api" rev="5.5.23"/>
+    	<dependency org="javax.annotation" name="jsr250-api" rev="1.0"/>
+    	<dependency org="javax.ws.rs" name="jsr311-api" rev="1.1.1" conf="deployment"/>
+    	<dependency org="org.apache.geronimo.specs" name="geronimo-atinject_1.0_spec" rev="1.0"/>
+    	
+    	<!-- common utils -->
+    	<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="deployment"/>
+    	
+    	<!-- an expression parser and evaluator for tripartate templates -->
+		<dependency org="org.apache.commons" name="commons-jexl" rev="2.1.1" conf="deployment"/>
+    	
+    	<!-- converts date/time strings into dates without needed to specify format -->
+		<dependency org="org.pojava" name="pojava" rev="2.8.1" conf="deployment"/>
+		
+		<!-- reads the names of method arguments -->
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.5.1" conf="deployment"/>
+		
+		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.2.1" conf="deployment"/>
+		
+		<!-- apache log4j -->
+		<dependency org="log4j" name="log4j" rev="1.2.17"/>
+		
+		<!-- helps process file uploads -->
+		<dependency org="commons-fileupload" name="commons-fileupload" rev="1.2.2" conf="deployment"/>
+		<dependency org="commons-io" name="commons-io" rev="2.4" conf="deployment"/>
+		
+		<!-- allows connection to mysql databases -->
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.21" conf="deployment"/>
+		
+		<!-- provides the jpa container -->
+		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.2.0.CR2" revConstraint="latest.integration" conf="deployment"/>
+		
+		<!-- finds all files of a certain name on the class path, needed for class path based templates -->
+		<dependency org="org.reflections" name="reflections" rev="0.9.8" conf="deployment"/>
+		
+		<!-- a toolkit for openId operations -->
+		<dependency org="org.expressme" name="JOpenId" rev="1.08" conf="deployment"/>
+		
+		<!-- For testing code -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+		
+		<!-- Is used for a StandardSession.  Try to remove -->
+		<dependency org="org.apache.tomcat" name="catalina" rev="6.0.35" conf="test"/>
+		
+            
+    </dependencies>
+</ivy-module>
