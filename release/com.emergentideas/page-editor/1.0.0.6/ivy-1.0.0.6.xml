@@ -8,7 +8,7 @@
 		
 		Change them to your organization name and the name of this plugin
 	 -->
-    <info organisation="com.emergentideas" module="page-editor" revision="1.0.0.6" status="integration" publication="20140420214628"/>
+    <info organisation="com.emergentideas" module="page-editor" revision="1.0.0.6" status="integration" publication="20140420233723"/>
     <configurations defaultconfmapping="build->*;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
