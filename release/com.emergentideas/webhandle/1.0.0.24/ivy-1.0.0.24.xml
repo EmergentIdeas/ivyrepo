@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.24" status="integration" publication="20140706124607"/>
+    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.24" status="integration" publication="20140706145548"/>
     <configurations defaultconf="build" defaultconfmapping="build->default;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="sources"/>
