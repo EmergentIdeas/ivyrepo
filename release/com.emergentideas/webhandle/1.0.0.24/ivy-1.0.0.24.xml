@@ -1,7 +1,8 @@
 <ivy-module version="2.0">
-    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.24" status="integration" publication="20140706145548"/>
+    <info organisation="com.emergentideas" module="webhandle" revision="1.0.0.24" status="integration" publication="20140721170729"/>
     <configurations defaultconf="build" defaultconfmapping="build->default;deployment->default;test->default">
     	<conf name="build"/>
+    	<conf name="war"/>
     	<conf name="sources"/>
     	<conf name="deployment"/>
     	<conf name="test"/>
@@ -10,6 +11,7 @@
     
     <publications>
     	<artifact name="webhandle" type="jar" ext="jar"/>
+    	<artifact name="webhandle" type="war" ext="war" conf="war"/>
     	<artifact name="webhandle-sources" type="source" ext="jar" conf="sources"/>
     </publications>
     <dependencies>
@@ -20,8 +22,8 @@
     	<dependency org="javax.ws.rs" name="jsr311-api" rev="1.1.1" conf="deployment"/>
     	
     	<!-- JSON API and Default Parser -->
-    	<dependency org="javax.json" name="javax.json-api" rev="1.0"/>
-    	<dependency org="org.glassfish" name="javax.json" rev="1.0.4"/>
+    	<dependency org="javax.json" name="javax.json-api" rev="1.0" conf="deployment->*"/>
+    	<dependency org="org.glassfish" name="javax.json" rev="1.0.4" conf="deployment->*"/>
     	
     	<dependency org="org.apache.geronimo.specs" name="geronimo-atinject_1.0_spec" rev="1.0"/>
     	
