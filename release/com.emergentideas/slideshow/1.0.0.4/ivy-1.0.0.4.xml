@@ -9,7 +9,7 @@
 		
 		Change them to your organization name and the name of this plugin
 	 -->
-    <info organisation="com.emergentideas" module="slideshow" revision="1.0.0.3" status="integration" publication="20141130003510"/>
+    <info organisation="com.emergentideas" module="slideshow" revision="1.0.0.4" status="integration" publication="20141130020512"/>
     <configurations defaultconfmapping="build->*;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
