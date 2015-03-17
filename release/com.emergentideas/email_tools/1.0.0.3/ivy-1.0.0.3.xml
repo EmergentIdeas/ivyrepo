@@ -1,0 +1,30 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="email_tools" revision="1.0.0.3" status="integration" publication="20150311011851"/>
+    <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="sources"/>
+    	<conf name="test"/>
+    </configurations>
+    <publications>
+    	<artifact name="email_tools" type="jar" conf="appdep"/>
+    	<artifact name="email_tools-sources" type="source" ext="jar" conf="sources"/>
+    </publications>
+    <dependencies>
+        <dependency org="com.emergentideas" name="webhandle" rev="1.0.0.28" revConstraint="[1.0.0.19,)" conf="build"/>	
+    	<dependency org="org.jsoup" name="jsoup" rev="[1.7.2,)" conf="appdep->default"/>
+    	<!-- common utils -->
+    	<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="build"/>
+    	<dependency org="javax.servlet" name="servlet-api" rev="2.5" conf="build"/>
+    	
+    	<!-- sends email -->
+		<dependency org="org.apache.commons" name="commons-email" rev="1.2" conf="appdep->default"/>
+    	
+    	
+    	<!-- For testing code -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>
