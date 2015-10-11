@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0">
 	<!-- 
 		Below is a basic template to set up the dependencies and publication targets. You must change 
@@ -9,7 +8,7 @@
 		
 		Change them to your organization name and the name of this plugin
 	 -->
-    <info organisation="com.emergentideas" module="slideshow" revision="1.0.0.3" status="integration" publication="20141130003510"/>
+    <info organisation="com.emergentideas" module="slideshow" revision="1.0.0.3" status="integration" publication="20150811222741"/>
     <configurations defaultconfmapping="build->*;deployment->default;test->default">
     	<conf name="build"/>
     	<conf name="deployment"/>
@@ -23,8 +22,8 @@
     	<artifact name="slideshow-sources" type="source" ext="jar" conf="sources"/>
     </publications>
     <dependencies>
-    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.28" revConstraint="[1.0.0.24,)" conf="build"/>
-    	<dependency org="com.emergentideas" name="crud_tools" rev="1.0.0.8" revConstraint="latest.integration" conf="build"/>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.31" revConstraint="[1.0.0.24,)" conf="build"/>
+    	<dependency org="com.emergentideas" name="crud_tools" rev="1.0.0.9" revConstraint="latest.integration" conf="build"/>
     		
     	
     	<!-- For the test app -->
