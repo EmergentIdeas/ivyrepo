@@ -1,0 +1,25 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="oak_login" revision="1.0.0.12" status="integration" publication="20160126160607"/>
+    <configurations defaultconfmapping="build->*;deployment->*;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="test"/>
+    	<conf name="sources"/>
+    	<conf name="empty"/>
+    </configurations>
+    <publications>
+    	<artifact name="oak_login" type="jar" conf="appdep"/>
+    	<artifact name="oak_login-sources" type="source" ext="jar" conf="sources"/>
+    </publications>
+    <dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.25" conf="build"/>	
+		<dependency org="com.emergentideas" name="oak_stdtemplates" rev="[1.0,)" conf="appdep"/> 
+		<dependency org="com.emergentideas" name="crud-tools" rev="1.0.0.1" revConstraint="[1.0,)" conf="build->appdep"/>
+    	
+    	<!-- For testing code -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>
