@@ -1,0 +1,42 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="email-tools-local" revision="1.0.0.10" status="integration" publication="20160821185217"/>
+    <!--
+     include like: 
+     		<dependency org="com.emergentideas" name="email-tools-local" rev="latest.integration" conf="appdep" />
+    -->
+    <configurations defaultconf="build" defaultconfmapping="build->*;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="sources"/>
+    	<conf name="test"/>
+    	<conf name="empty"/>
+		<conf name="javabin"/>
+		<conf name="resources"/>
+		<conf name="templates"/>
+		<conf name="configuration"/>
+		<conf name="deps"/>
+    </configurations>
+    <publications>
+    	<artifact name="email-tools-local" type="jar" conf="appdep"/>
+		<artifact name="email-tools-local-javabin" type="jar" conf="javabin"/>
+    	<artifact name="email-tools-local-javabin-sources" type="source" ext="jar" conf="sources"/>
+		<artifact name="email-tools-local-resources" type="zip" conf="resources"/>
+		<artifact name="email-tools-local-templates" type="zip" conf="templates"/>
+		<artifact name="email-tools-local-configuration" type="zip" conf="configuration"/>
+    </publications>
+    <dependencies>
+        <dependency org="com.emergentideas" name="webhandle" rev="1.0.0.33" revConstraint="[1.0.0.19,)" conf="build"/>	
+    	<!-- common utils -->
+    	<dependency org="commons-lang" name="commons-lang" rev="2.6" revConstraint="[2.6,)" conf="build"/>
+    	<dependency org="javax.servlet" name="servlet-api" rev="2.5" conf="build"/>
+    	
+    	<!-- sends email -->
+    	<dependency org="org.jsoup" name="jsoup" rev="[1.7.2,)" conf="deps->default"/>
+    	
+    	<!-- For testing code -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>
