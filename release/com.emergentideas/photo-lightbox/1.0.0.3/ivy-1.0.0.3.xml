@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+	<!-- 
+		Below is a basic template to set up the dependencies and publication targets. You must change 
+		the following strings:
+		
+		com.emergentideas
+		photo-lightbox
+		
+		Change them to your organization name and the name of this plugin
+	 -->
+    <info organisation="com.emergentideas" module="photo-lightbox" revision="1.0.0.3" status="integration" publication="20170411055714"/>
+    <configurations defaultconfmapping="build->*;deployment->default;test->default;deps->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="test"/>
+    	<conf name="sources"/>
+    	<conf name="empty"/>
+ 		<conf name="javabin"/>
+		<conf name="resources"/>
+		<conf name="templates"/>
+		<conf name="configuration"/>
+		<conf name="testjavabin"/>
+		<conf name="testresources"/>
+		<conf name="testtemplates"/>
+		<conf name="testconfiguration"/>
+		<conf name="deps"/>
+    </configurations>
+    <publications>
+    	<artifact name="photo-lightbox" type="jar" conf="appdep"/>
+ 		<artifact name="photo-lightbox-javabin" type="jar" conf="javabin"/>
+    	<artifact name="photo-lightbox-javabin-sources" type="source" ext="jar" conf="sources"/>
+		<artifact name="photo-lightbox-resources" type="zip" conf="resources"/>
+		<artifact name="photo-lightbox-templates" type="zip" conf="templates"/>
+		<artifact name="photo-lightbox-configuration" type="zip" conf="configuration"/>
+    </publications>
+    <dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.33" revConstraint="[1.0.0.24,)" conf="build"/>	
+    	
+    	<!-- For the test app -->
+		<dependency org="com.emergentideas" name="oak-login" rev="latest.integration" conf="testjavabin->javabin"/>
+		<dependency org="com.emergentideas" name="oak-login" rev="latest.integration" conf="testresources->resources"/>
+		<dependency org="com.emergentideas" name="oak-login" rev="latest.integration" conf="testtemplates->templates"/>
+		<dependency org="com.emergentideas" name="oak-login" rev="latest.integration" conf="testconfiguration->configuration"/>
+		<dependency org="com.emergentideas" name="oak-login" rev="latest.integration" conf="appdep"/>
+		
+
+		<dependency org="com.emergentideas" name="crud-tools" rev="latest.integration" conf="testjavabin->javabin"/>
+		<dependency org="com.emergentideas" name="crud-tools" rev="latest.integration" conf="testresources->resources"/>
+		<dependency org="com.emergentideas" name="crud-tools" rev="latest.integration" conf="testtemplates->templates"/>
+		<dependency org="com.emergentideas" name="crud-tools" rev="latest.integration" conf="testconfiguration->configuration"/>
+		<dependency org="com.emergentideas" name="crud-tools" rev="latest.integration" conf="appdep"/>
+
+
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="testjavabin->javabin"/>
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="testresources->resources"/>
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="testtemplates->templates"/>
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="testconfiguration->configuration"/>
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="appdep"/>
+
+		<dependency org="com.emergentideas" name="oak_stdtemplates" rev="[1.0,)" conf="test->appdep"/> 
+		<dependency org="org.hsqldb" name="hsqldb" rev="2.3.1" conf="test->default"/>
+		
+		<!-- For unit testing -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>
