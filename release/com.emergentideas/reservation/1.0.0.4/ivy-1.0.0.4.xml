@@ -1,0 +1,37 @@
+<ivy-module version="2.0">
+	<!-- 
+		Below is a basic template to set up the dependencies and publication targets. You must change 
+		the following strings:
+		
+		com.emergentideas
+		reservation
+		
+		Change them to your organization name and the name of this plugin
+	 -->
+    <info organisation="com.emergentideas" module="reservation" revision="1.0.0.4" status="integration" publication="20150915145109"/>
+    <configurations defaultconfmapping="build->*;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="test"/>
+    	<conf name="sources"/>
+    	<conf name="empty"/>
+    </configurations>
+    <publications>
+    	<artifact name="reservation" type="jar" conf="appdep"/>
+    	<artifact name="reservation-sources" type="source" ext="jar" conf="sources"/>
+    </publications>
+    <dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.31" revConstraint="[1.0.0.24,)" conf="build"/>	
+    	
+    	<!-- For the test app -->
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="test->appdep"/>
+		<dependency org="com.emergentideas" name="oak_stdtemplates" rev="[1.0,)" conf="test->appdep"/> 
+		<dependency org="org.hsqldb" name="hsqldb" rev="2.3.1" conf="test->default"/>
+		
+		<!-- For unit testing -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>

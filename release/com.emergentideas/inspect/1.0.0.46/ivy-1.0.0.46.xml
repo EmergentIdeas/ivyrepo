@@ -1,0 +1,41 @@
+<ivy-module version="2.0">
+	<info organisation="com.emergentideas" module="inspect" revision="1.0.0.46" status="integration" publication="20151005114057"/>
+	<configurations defaultconf="build" defaultconfmapping="build->*;test->default">
+		<conf name="build"/>
+		<conf name="deployment"/>
+		<conf name="appdep"/>
+		<conf name="war"/>
+		<conf name="test"/>
+		<conf name="sources"/>
+		<conf name="resources"/>
+		<conf name="templates"/>
+		<conf name="jetty"/>
+		<conf name="empty"/>
+	</configurations>
+    <publications>
+        <artifact name="inspect" type="jar" conf="appdep"/>
+        <artifact name="inspect-sources" type="source" ext="jar" conf="sources"/>
+        <artifact name="inspect-resources" type="source" ext="zip" conf="resources"/>
+        <artifact name="inspect-templates" type="source" ext="zip" conf="templates"/>
+    </publications>
+ 	<dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="latest.integration" conf="build"/>	
+    	<dependency org="com.emergentideas" name="webhandle" rev="latest.integration" conf="war"/>	
+		<dependency org="com.emergentideas" name="oak_login" rev="1.0.0.11" revConstraint="latest.integration" conf="appdep"/>
+		<dependency org="com.emergentideas" name="page-editor" rev="1.0.0.20" revConstraint="latest.integration" conf="appdep"/>
+		<dependency org="com.emergentideas" name="tripartite-js" rev="1.0.0.2" revConstraint="latest.integration" conf="appdep"/>
+		<dependency org="com.emergentideas" name="reservation" rev="1.0.0.4" revConstraint="latest.integration" conf="appdep,sources"/>
+		<dependency org="org.apache.commons" name="commons-csv" rev="1.1" conf="appdep->default"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.5.1" conf="appdep->default"/>
+		
+		<dependency org="com.lowagie" name="itext" rev="4.2.1" conf="appdep->default"/>
+		<dependency org="com.emergentideas" name="email_tools" rev="1.0.0.3" revConstraint="latest.integration" conf="appdep,sources"/>
+				
+		<dependency org="com.emergentideas" name="entity-class-tools" rev="latest.integration" conf="test->appdep"/>
+		
+				<!-- grabs text from a process output stream -->
+		<dependency org="org.apache.commons" name="commons-exec" rev="1.1" conf="appdep->default"/>
+		
+		<dependency org="org.eclipse.jetty" name="jetty-runner" rev="latest.integration" conf="jetty->*"/>
+	</dependencies>
+</ivy-module>

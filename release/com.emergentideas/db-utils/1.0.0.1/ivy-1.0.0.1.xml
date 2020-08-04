@@ -1,0 +1,43 @@
+<ivy-module version="2.0">
+	<!-- 
+		Below is a basic template to set up the dependencies and publication targets. You must change 
+		the following strings:
+		
+		com.emergentideas
+		db-utils
+		
+		Change them to your organization name and the name of this plugin
+	 -->
+    <info organisation="com.emergentideas" module="db-utils" revision="1.0.0.1" status="integration" publication="20151220164207"/>
+    <configurations defaultconfmapping="build->*;deployment->default;test->default">
+    	<conf name="build"/>
+    	<conf name="deployment"/>
+    	<conf name="appdep"/>
+    	<conf name="test"/>
+    	<conf name="sources"/>
+    	<conf name="empty"/>
+    </configurations>
+    <publications>
+    	<artifact name="db-utils" type="jar" conf="appdep"/>
+    	<artifact name="db-utils-sources" type="source" ext="jar" conf="sources"/>
+    </publications>
+    <dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.33" revConstraint="[1.0.0.24,)" conf="build"/>	
+    	
+    	<!-- For the test app -->
+		<dependency org="com.emergentideas" name="page-editor" rev="latest.integration" conf="test->appdep"/>
+		<dependency org="com.emergentideas" name="oak_stdtemplates" rev="[1.0,)" conf="test->appdep"/> 
+		<dependency org="org.hsqldb" name="hsqldb" rev="2.3.1" conf="test->default"/>
+		
+		<!-- allows connection to mysql databases -->
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.21" conf="test->default"/>
+		
+		<!-- CSV Export -->
+		<dependency org="org.apache.commons" name="commons-csv" rev="1.1" conf="appdep->default"/>
+		
+		<!-- For unit testing -->
+		<dependency org="org.mockito" name="mockito-all" rev="1.9.5-rc1" conf="test"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test"/>
+    	
+    </dependencies>
+</ivy-module>
